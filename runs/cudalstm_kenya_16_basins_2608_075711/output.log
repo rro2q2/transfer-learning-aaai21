@@ -1,0 +1,88 @@
+2021-08-26 07:57:11,717: Logging to /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2608_075711/output.log initialized.
+2021-08-26 07:57:11,718: ### Folder structure created at /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2608_075711
+2021-08-26 07:57:11,718: ### Run configurations for cudalstm_kenya_16_basins
+2021-08-26 07:57:11,718: experiment_name: cudalstm_kenya_16_basins
+2021-08-26 07:57:11,718: run_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2608_075711
+2021-08-26 07:57:11,718: train_basin_file: examples/TNC-Kenya/kenya_basin_list.txt
+2021-08-26 07:57:11,718: validation_basin_file: examples/TNC-Kenya/kenya_basin_list.txt
+2021-08-26 07:57:11,718: test_basin_file: examples/TNC-Kenya/kenya_basin_list.txt
+2021-08-26 07:57:11,719: train_start_date: 2015-11-20 00:00:00
+2021-08-26 07:57:11,719: train_end_date: 2019-01-03 00:00:00
+2021-08-26 07:57:11,719: validation_start_date: 2019-01-04 00:00:00
+2021-08-26 07:57:11,719: validation_end_date: 2019-05-26 00:00:00
+2021-08-26 07:57:11,719: test_start_date: 2019-05-27 00:00:00
+2021-08-26 07:57:11,719: test_end_date: 2019-10-16 00:00:00
+2021-08-26 07:57:11,719: seed: 123
+2021-08-26 07:57:11,719: device: cpu
+2021-08-26 07:57:11,720: validate_every: 1
+2021-08-26 07:57:11,720: validate_n_random_basins: 16
+2021-08-26 07:57:11,720: metrics: ['NSE']
+2021-08-26 07:57:11,720: model: cudalstm
+2021-08-26 07:57:11,720: head: regression
+2021-08-26 07:57:11,720: hidden_size: 128
+2021-08-26 07:57:11,720: initial_forget_bias: 3
+2021-08-26 07:57:11,720: output_dropout: 0.4
+2021-08-26 07:57:11,721: output_activation: linear
+2021-08-26 07:57:11,721: optimizer: Adam
+2021-08-26 07:57:11,721: loss: NSE
+2021-08-26 07:57:11,721: learning_rate: {0: 0.001, 1: 0.0005}
+2021-08-26 07:57:11,721: batch_size: 256
+2021-08-26 07:57:11,721: epochs: 3
+2021-08-26 07:57:11,721: clip_gradient_norm: 1
+2021-08-26 07:57:11,722: predict_last_n: 1
+2021-08-26 07:57:11,722: seq_length: 365
+2021-08-26 07:57:11,722: num_workers: 8
+2021-08-26 07:57:11,722: log_interval: 5
+2021-08-26 07:57:11,722: log_tensorboard: True
+2021-08-26 07:57:11,722: save_weights_every: 1
+2021-08-26 07:57:11,723: save_validation_results: True
+2021-08-26 07:57:11,723: dataset: tnc_kenya
+2021-08-26 07:57:11,723: data_dir: data_dir
+2021-08-26 07:57:11,723: forcings: ['kenya_forcings']
+2021-08-26 07:57:11,723: dynamic_inputs: ['prcp(mm/day)', 'srad(W/m2)', 'tmax(C)', 'tmin(C)', 'vp(Pa)']
+2021-08-26 07:57:11,723: target_variables: ['QObs(mm/d)']
+2021-08-26 07:57:11,723: static_attributes: None
+2021-08-26 07:57:11,723: number_of_basins: 16
+2021-08-26 07:57:11,723: train_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2608_075711/train_data
+2021-08-26 07:57:11,723: img_log_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2608_075711/img_log
+2021-08-26 07:57:11,736: ### Device cpu will be used for training
+2021-08-26 07:57:11,767: Loading basin data_dir into xarray data_dir set.
+2021-08-26 07:57:12,061: NumExpr defaulting to 4 threads.
+2021-08-26 07:57:13,074: Calculating target variable stds per basin
+2021-08-26 07:57:13,152: Create lookup table and convert to pytorch tensor
+2021-08-26 07:57:15,221: Setting learning rate to 0.0005
+2021-08-26 07:57:23,394: Uncaught exception
+Traceback (most recent call last):
+  File "/Users/rolandoruche/opt/anaconda3/bin/nh-run", line 33, in <module>
+    sys.exit(load_entry_point('neuralhydrology', 'console_scripts', 'nh-run')())
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/nh_run.py", line 43, in _main
+    start_run(config_file=Path(args["config_file"]), gpu=args["gpu"])
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/nh_run.py", line 76, in start_run
+    start_training(config)
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/train.py", line 23, in start_training
+    trainer.train_and_validate()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/basetrainer.py", line 206, in train_and_validate
+    self._train_epoch(epoch=epoch)
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/basetrainer.py", line 272, in _train_epoch
+    for data in pbar:
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/tqdm/std.py", line 1178, in __iter__
+    for obj in iterable:
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 359, in __iter__
+    return self._get_iterator()
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 305, in _get_iterator
+    return _MultiProcessingDataLoaderIter(self)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 918, in __init__
+    w.start()
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/context.py", line 284, in _Popen
+    return Popen(process_obj)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 62, in _launch
+    f.write(fp.getbuffer())
+KeyboardInterrupt

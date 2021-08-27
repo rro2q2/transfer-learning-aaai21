@@ -1,0 +1,88 @@
+2021-08-26 00:53:24,442: Logging to /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_005324/output.log initialized.
+2021-08-26 00:53:24,443: ### Folder structure created at /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_005324
+2021-08-26 00:53:24,443: ### Run configurations for cudalstm_camels_us_531_basins
+2021-08-26 00:53:24,443: experiment_name: cudalstm_camels_us_531_basins
+2021-08-26 00:53:24,443: run_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_005324
+2021-08-26 00:53:24,443: train_basin_file: examples/CAMELS-US/us_basin_list.txt
+2021-08-26 00:53:24,443: validation_basin_file: examples/CAMELS-US/us_basin_list.txt
+2021-08-26 00:53:24,443: test_basin_file: examples/CAMELS-US/us_basin_list.txt
+2021-08-26 00:53:24,444: train_start_date: 1999-10-01 00:00:00
+2021-08-26 00:53:24,444: train_end_date: 2008-09-30 00:00:00
+2021-08-26 00:53:24,444: validation_start_date: 1980-10-01 00:00:00
+2021-08-26 00:53:24,445: validation_end_date: 1989-09-30 00:00:00
+2021-08-26 00:53:24,445: test_start_date: 1989-10-01 00:00:00
+2021-08-26 00:53:24,445: test_end_date: 1999-09-30 00:00:00
+2021-08-26 00:53:24,445: seed: 123
+2021-08-26 00:53:24,445: device: None
+2021-08-26 00:53:24,445: validate_every: 1
+2021-08-26 00:53:24,445: validate_n_random_basins: 531
+2021-08-26 00:53:24,445: metrics: ['NSE']
+2021-08-26 00:53:24,445: model: cudalstm
+2021-08-26 00:53:24,445: head: regression
+2021-08-26 00:53:24,446: hidden_size: 128
+2021-08-26 00:53:24,446: initial_forget_bias: 3
+2021-08-26 00:53:24,446: output_dropout: 0.4
+2021-08-26 00:53:24,446: output_activation: linear
+2021-08-26 00:53:24,446: optimizer: Adam
+2021-08-26 00:53:24,446: loss: NSE
+2021-08-26 00:53:24,446: learning_rate: {0: 0.001, 1: 0.0005}
+2021-08-26 00:53:24,446: batch_size: 256
+2021-08-26 00:53:24,446: epochs: 3
+2021-08-26 00:53:24,446: clip_gradient_norm: 1
+2021-08-26 00:53:24,446: predict_last_n: 1
+2021-08-26 00:53:24,446: seq_length: 365
+2021-08-26 00:53:24,446: num_workers: 8
+2021-08-26 00:53:24,446: log_interval: 5
+2021-08-26 00:53:24,447: log_tensorboard: True
+2021-08-26 00:53:24,447: save_weights_every: 1
+2021-08-26 00:53:24,447: save_validation_results: True
+2021-08-26 00:53:24,447: dataset: camels_us
+2021-08-26 00:53:24,447: data_dir: data_dir
+2021-08-26 00:53:24,447: forcings: ['nldas_extended']
+2021-08-26 00:53:24,447: dynamic_inputs: ['prcp(mm/day)', 'srad(W/m2)', 'tmax(C)', 'tmin(C)', 'vp(Pa)']
+2021-08-26 00:53:24,447: target_variables: ['QObs(mm/d)']
+2021-08-26 00:53:24,447: static_attributes: None
+2021-08-26 00:53:24,447: number_of_basins: 531
+2021-08-26 00:53:24,447: train_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_005324/train_data
+2021-08-26 00:53:24,447: img_log_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_005324/img_log
+2021-08-26 00:53:24,464: ### Device cpu will be used for training
+2021-08-26 00:53:24,492: Loading basin data_dir into xarray data_dir set.
+2021-08-26 00:53:24,731: NumExpr defaulting to 4 threads.
+2021-08-26 00:53:25,079: Uncaught exception
+Traceback (most recent call last):
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/basedataset.py", line 278, in _load_or_create_xarray_dataset
+    df = df[keep_cols]
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py", line 3030, in __getitem__
+    indexer = self.loc._get_listlike_indexer(key, axis=1, raise_missing=True)[1]
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/pandas/core/indexing.py", line 1266, in _get_listlike_indexer
+    self._validate_read_indexer(keyarr, indexer, axis, raise_missing=raise_missing)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/pandas/core/indexing.py", line 1316, in _validate_read_indexer
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['prcp(mm/day)', 'vp(Pa)', 'srad(W/m2)', 'tmax(C)', 'tmin(C)'] not in index"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rolandoruche/opt/anaconda3/bin/nh-run", line 33, in <module>
+    sys.exit(load_entry_point('neuralhydrology', 'console_scripts', 'nh-run')())
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/nh_run.py", line 43, in _main
+    start_run(config_file=Path(args["config_file"]), gpu=args["gpu"])
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/nh_run.py", line 76, in start_run
+    start_training(config)
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/train.py", line 22, in start_training
+    trainer.initialize_training()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/basetrainer.py", line 163, in initialize_training
+    ds = self._get_dataset()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/basetrainer.py", line 78, in _get_dataset
+    return get_dataset(cfg=self.cfg, period="train", is_train=True, scaler=self._scaler)
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/__init__.py", line 72, in get_dataset
+    ds = Dataset(cfg=cfg,
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/camelsus.py", line 60, in __init__
+    super(CamelsUS, self).__init__(cfg=cfg,
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/basedataset.py", line 129, in __init__
+    self._load_data()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/basedataset.py", line 542, in _load_data
+    xr = self._load_or_create_xarray_dataset()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/basedataset.py", line 285, in _load_or_create_xarray_dataset
+    raise KeyError("".join(msg))
+KeyError: "The following features are not available in the data_dir: ['prcp(mm/day)', 'srad(W/m2)', 'tmax(C)', 'tmin(C)', 'vp(Pa)']. These are the available features: ['Year', 'Mnth', 'Day', 'Hr', 'Dayl(s)', 'PRCP(mm/day)', 'SRAD(W/m2)', 'SWE(mm)', 'Tmax(C)', 'Tmin(C)', 'Vp(Pa)', 'QObs(mm/d)']"

@@ -1,0 +1,62 @@
+2021-08-26 08:40:22,395: Logging to /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_1_basin_2608_084022/output.log initialized.
+2021-08-26 08:40:22,395: ### Folder structure created at /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_1_basin_2608_084022
+2021-08-26 08:40:22,396: ### Run configurations for cudalstm_kenya_1_basin
+2021-08-26 08:40:22,396: experiment_name: cudalstm_kenya_1_basin
+2021-08-26 08:40:22,396: run_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_1_basin_2608_084022
+2021-08-26 08:40:22,396: train_basin_file: examples/Kenya-1-basin/kenya_1_basin.txt
+2021-08-26 08:40:22,396: validation_basin_file: examples/Kenya-1-basin/kenya_1_basin.txt
+2021-08-26 08:40:22,396: test_basin_file: examples/Kenya-1-basin/kenya_1_basin.txt
+2021-08-26 08:40:22,397: train_start_date: 2015-11-20 00:00:00
+2021-08-26 08:40:22,397: train_end_date: 2019-01-03 00:00:00
+2021-08-26 08:40:22,397: validation_start_date: 2019-01-04 00:00:00
+2021-08-26 08:40:22,398: validation_end_date: 2019-05-26 00:00:00
+2021-08-26 08:40:22,398: test_start_date: 2019-05-27 00:00:00
+2021-08-26 08:40:22,398: test_end_date: 2019-10-16 00:00:00
+2021-08-26 08:40:22,398: seed: 123
+2021-08-26 08:40:22,398: device: cpu
+2021-08-26 08:40:22,398: validate_every: 1
+2021-08-26 08:40:22,398: validate_n_random_basins: 16
+2021-08-26 08:40:22,399: metrics: ['NSE']
+2021-08-26 08:40:22,399: model: cudalstm
+2021-08-26 08:40:22,399: head: regression
+2021-08-26 08:40:22,399: hidden_size: 20
+2021-08-26 08:40:22,399: initial_forget_bias: 3
+2021-08-26 08:40:22,399: output_dropout: 0.4
+2021-08-26 08:40:22,400: output_activation: linear
+2021-08-26 08:40:22,400: optimizer: Adam
+2021-08-26 08:40:22,400: loss: NSE
+2021-08-26 08:40:22,400: learning_rate: {0: 0.001, 1: 0.0005}
+2021-08-26 08:40:22,400: batch_size: 256
+2021-08-26 08:40:22,400: epochs: 3
+2021-08-26 08:40:22,400: clip_gradient_norm: 1
+2021-08-26 08:40:22,401: predict_last_n: 1
+2021-08-26 08:40:22,401: seq_length: 365
+2021-08-26 08:40:22,401: num_workers: 4
+2021-08-26 08:40:22,401: log_interval: 5
+2021-08-26 08:40:22,401: log_tensorboard: True
+2021-08-26 08:40:22,401: save_weights_every: 1
+2021-08-26 08:40:22,401: save_validation_results: True
+2021-08-26 08:40:22,401: dataset: kenya_1_basin
+2021-08-26 08:40:22,401: data_dir: data_dir
+2021-08-26 08:40:22,402: forcings: kenya_1_basin_forcings
+2021-08-26 08:40:22,402: dynamic_inputs: ['prcp(mm/day)', 'srad(W/m2)', 'tmax(C)', 'tmin(C)', 'vp(Pa)']
+2021-08-26 08:40:22,402: target_variables: ['QObs(mm/d)']
+2021-08-26 08:40:22,402: static_attributes: None
+2021-08-26 08:40:22,402: number_of_basins: 1
+2021-08-26 08:40:22,402: train_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_1_basin_2608_084022/train_data
+2021-08-26 08:40:22,402: img_log_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_1_basin_2608_084022/img_log
+2021-08-26 08:40:22,410: ### Device cpu will be used for training
+2021-08-26 08:40:22,435: Loading basin data_dir into xarray data_dir set.
+2021-08-26 08:40:22,519: NumExpr defaulting to 4 threads.
+2021-08-26 08:40:22,598: Calculating target variable stds per basin
+2021-08-26 08:40:22,611: Create lookup table and convert to pytorch tensor
+2021-08-26 08:40:24,363: Setting learning rate to 0.0005
+2021-08-26 08:40:34,007: Epoch 1 average loss: 2.3541263396049765e-19
+2021-08-26 08:40:34,592: Stored results at /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_1_basin_2608_084022/validation/model_epoch001/validation_results.p
+2021-08-26 08:40:34,593:  -- Median validation metrics:NSE: -1.15291
+2021-08-26 08:40:40,063: Epoch 2 average loss: 1.810525067617306e-19
+2021-08-26 08:40:40,167: Stored results at /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_1_basin_2608_084022/validation/model_epoch002/validation_results.p
+2021-08-26 08:40:40,168:  -- Median validation metrics:NSE: -1.15291
+2021-08-26 08:40:47,889: Epoch 3 average loss: 2.6973758669234617e-19
+2021-08-26 08:40:48,000: Stored results at /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_1_basin_2608_084022/validation/model_epoch003/validation_results.p
+2021-08-26 08:40:48,001:  -- Median validation metrics:NSE: -1.15291

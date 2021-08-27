@@ -1,0 +1,64 @@
+2021-08-26 01:22:33,947: Logging to /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/kenya_1_basin_test_run_2608_012233/output.log initialized.
+2021-08-26 01:22:33,947: ### Folder structure created at /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/kenya_1_basin_test_run_2608_012233
+2021-08-26 01:22:33,947: ### Run configurations for kenya_1_basin_test_run
+2021-08-26 01:22:33,947: experiment_name: kenya_1_basin_test_run
+2021-08-26 01:22:33,947: train_basin_file: examples/Kenya-1-basin/1-basin-config.yml
+2021-08-26 01:22:33,947: validation_basin_file: examples/Kenya-1-basin/1-basin-config.yml
+2021-08-26 01:22:33,947: test_basin_file: examples/Kenya-1-basin/1-basin-config.yml
+2021-08-26 01:22:33,948: train_start_date: 2015-11-20 00:00:00
+2021-08-26 01:22:33,948: train_end_date: 2019-01-03 00:00:00
+2021-08-26 01:22:33,948: validation_start_date: 2019-01-04 00:00:00
+2021-08-26 01:22:33,948: validation_end_date: 2019-05-26 00:00:00
+2021-08-26 01:22:33,948: test_start_date: 2019-05-27 00:00:00
+2021-08-26 01:22:33,948: test_end_date: 2019-10-16 00:00:00
+2021-08-26 01:22:33,948: device: cpu
+2021-08-26 01:22:33,948: validate_every: 3
+2021-08-26 01:22:33,948: validate_n_random_basins: 1
+2021-08-26 01:22:33,949: metrics: ['NSE']
+2021-08-26 01:22:33,949: model: cudalstm
+2021-08-26 01:22:33,949: head: regression
+2021-08-26 01:22:33,949: output_activation: linear
+2021-08-26 01:22:33,949: hidden_size: 20
+2021-08-26 01:22:33,949: initial_forget_bias: 3
+2021-08-26 01:22:33,949: output_dropout: 0.4
+2021-08-26 01:22:33,949: optimizer: Adam
+2021-08-26 01:22:33,949: loss: MSE
+2021-08-26 01:22:33,949: learning_rate: {0: 0.01, 30: 0.005, 40: 0.001}
+2021-08-26 01:22:33,949: batch_size: 256
+2021-08-26 01:22:33,949: epochs: 50
+2021-08-26 01:22:33,949: clip_gradient_norm: 1
+2021-08-26 01:22:33,950: predict_last_n: 1
+2021-08-26 01:22:33,950: seq_length: 365
+2021-08-26 01:22:33,950: num_workers: 8
+2021-08-26 01:22:33,950: log_interval: 5
+2021-08-26 01:22:33,950: log_tensorboard: True
+2021-08-26 01:22:33,950: log_n_figures: 1
+2021-08-26 01:22:33,950: save_weights_every: 1
+2021-08-26 01:22:33,950: dataset: kenya_1_basin
+2021-08-26 01:22:33,950: data_dir: data_dir
+2021-08-26 01:22:33,950: forcings: ['kenya_1_basin_forcings']
+2021-08-26 01:22:33,950: dynamic_inputs: ['prcp(mm/day)', 'srad(W/m2)', 'tmax(C)', 'tmin(C)', 'vp(Pa)']
+2021-08-26 01:22:33,951: target_variables: ['QObs(mm/d)']
+2021-08-26 01:22:33,951: clip_targets_to_zero: ['QObs(mm/d)']
+2021-08-26 01:22:33,951: number_of_basins: 94
+2021-08-26 01:22:33,951: run_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/kenya_1_basin_test_run_2608_012233
+2021-08-26 01:22:33,951: train_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/kenya_1_basin_test_run_2608_012233/train_data
+2021-08-26 01:22:33,951: img_log_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/kenya_1_basin_test_run_2608_012233/img_log
+2021-08-26 01:22:33,959: ### Device cpu will be used for training
+2021-08-26 01:22:33,991: Uncaught exception
+Traceback (most recent call last):
+  File "/Users/rolandoruche/opt/anaconda3/bin/nh-run", line 33, in <module>
+    sys.exit(load_entry_point('neuralhydrology', 'console_scripts', 'nh-run')())
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/nh_run.py", line 43, in _main
+    start_run(config_file=Path(args["config_file"]), gpu=args["gpu"])
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/nh_run.py", line 76, in start_run
+    start_training(config)
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/train.py", line 22, in start_training
+    trainer.initialize_training()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/basetrainer.py", line 163, in initialize_training
+    ds = self._get_dataset()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/basetrainer.py", line 78, in _get_dataset
+    return get_dataset(cfg=self.cfg, period="train", is_train=True, scaler=self._scaler)
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/__init__.py", line 73, in get_dataset
+    raise NotImplementedError(f"No dataset class implemented for dataset {cfg.dataset}")
+NotImplementedError: No dataset class implemented for dataset kenya_1_basin

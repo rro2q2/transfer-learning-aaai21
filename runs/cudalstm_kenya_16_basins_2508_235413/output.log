@@ -1,0 +1,53 @@
+2021-08-25 23:54:13,591: Logging to /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_235413/output.log initialized.
+2021-08-25 23:54:13,592: ### Folder structure created at /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_235413
+2021-08-25 23:54:13,592: ### Run configurations for cudalstm_kenya_16_basins
+2021-08-25 23:54:13,592: experiment_name: cudalstm_kenya_16_basins
+2021-08-25 23:54:13,592: run_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_235413
+2021-08-25 23:54:13,592: train_basin_file: examples/TNC-Kenya/kenya_basin_list.txt
+2021-08-25 23:54:13,592: validation_basin_file: examples/TNC-Kenya/kenya_basin_list.txt
+2021-08-25 23:54:13,592: test_basin_file: examples/TNC-Kenya/kenya_basin_list.txt
+2021-08-25 23:54:13,593: train_start_date: 2015-11-20 00:00:00
+2021-08-25 23:54:13,593: train_end_date: 2019-01-03 00:00:00
+2021-08-25 23:54:13,593: validation_start_date: 2019-01-04 00:00:00
+2021-08-25 23:54:13,594: validation_end_date: 2019-05-26 00:00:00
+2021-08-25 23:54:13,594: test_start_date: 2019-05-27 00:00:00
+2021-08-25 23:54:13,594: test_end_date: 2019-10-16 00:00:00
+2021-08-25 23:54:13,594: seed: 123
+2021-08-25 23:54:13,594: device: cpu
+2021-08-25 23:54:13,594: validate_every: 1
+2021-08-25 23:54:13,595: validate_n_random_basins: 16
+2021-08-25 23:54:13,595: metrics: ['NSE']
+2021-08-25 23:54:13,595: model: cudalstm
+2021-08-25 23:54:13,595: head: regression
+2021-08-25 23:54:13,595: hidden_size: 128
+2021-08-25 23:54:13,595: initial_forget_bias: 3
+2021-08-25 23:54:13,595: output_dropout: 0.4
+2021-08-25 23:54:13,595: output_activation: linear
+2021-08-25 23:54:13,595: optimizer: Adam
+2021-08-25 23:54:13,595: loss: NSE
+2021-08-25 23:54:13,596: learning_rate: {0: 0.001, 1: 0.0005}
+2021-08-25 23:54:13,596: batch_size: 256
+2021-08-25 23:54:13,596: epochs: 3
+2021-08-25 23:54:13,596: clip_gradient_norm: 1
+2021-08-25 23:54:13,596: predict_last_n: 1
+2021-08-25 23:54:13,596: seq_length: 365
+2021-08-25 23:54:13,596: num_workers: 8
+2021-08-25 23:54:13,596: log_interval: 5
+2021-08-25 23:54:13,596: log_tensorboard: True
+2021-08-25 23:54:13,596: save_weights_every: 1
+2021-08-25 23:54:13,597: save_validation_results: True
+2021-08-25 23:54:13,597: dataset: tnc_kenya
+2021-08-25 23:54:13,597: data_dir: data_dir
+2021-08-25 23:54:13,597: forcings: ['kenya_forcings']
+2021-08-25 23:54:13,597: dynamic_inputs: ['prcp(mm/day)', 'srad(W/m2)', 'tmax(C)', 'tmin(C)', 'vp(Pa)']
+2021-08-25 23:54:13,597: target_variables: ['QObs(mm/d)']
+2021-08-25 23:54:13,597: static_attributes: None
+2021-08-25 23:54:13,597: number_of_basins: 16
+2021-08-25 23:54:13,597: train_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_235413/train_data
+2021-08-25 23:54:13,597: img_log_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_235413/img_log
+2021-08-25 23:54:13,680: ### Device cpu will be used for training
+2021-08-25 23:54:13,790: Loading basin data_dir into xarray data_dir set.
+2021-08-25 23:54:13,923: NumExpr defaulting to 4 threads.
+2021-08-25 23:54:14,950: Calculating target variable stds per basin
+2021-08-25 23:54:15,023: Create lookup table and convert to pytorch tensor
+2021-08-25 23:54:17,105: Setting learning rate to 0.0005

@@ -1,0 +1,73 @@
+2021-08-25 23:04:47,244: Logging to /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_230447/output.log initialized.
+2021-08-25 23:04:47,244: ### Folder structure created at /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_230447
+2021-08-25 23:04:47,245: ### Run configurations for cudalstm_kenya_16_basins
+2021-08-25 23:04:47,245: experiment_name: cudalstm_kenya_16_basins
+2021-08-25 23:04:47,245: run_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_230447
+2021-08-25 23:04:47,245: train_basin_file: examples/TNC-Kenya/kenya_basin_list.txt
+2021-08-25 23:04:47,245: validation_basin_file: examples/TNC-Kenya/kenya_basin_list.txt
+2021-08-25 23:04:47,245: test_basin_file: examples/TNC-Kenya/kenya_basin_list.txt
+2021-08-25 23:04:47,246: train_start_date: 2015-11-20 00:00:00
+2021-08-25 23:04:47,246: train_end_date: 2019-01-03 00:00:00
+2021-08-25 23:04:47,246: validation_start_date: 2019-01-04 00:00:00
+2021-08-25 23:04:47,246: validation_end_date: 2019-05-26 00:00:00
+2021-08-25 23:04:47,246: test_start_date: 2019-05-27 00:00:00
+2021-08-25 23:04:47,246: test_end_date: 2019-10-16 00:00:00
+2021-08-25 23:04:47,246: seed: 123
+2021-08-25 23:04:47,247: device: cuda:0
+2021-08-25 23:04:47,247: validate_every: 1
+2021-08-25 23:04:47,247: validate_n_random_basins: 16
+2021-08-25 23:04:47,247: metrics: ['NSE']
+2021-08-25 23:04:47,247: model: cudalstm
+2021-08-25 23:04:47,247: head: regression
+2021-08-25 23:04:47,247: hidden_size: 128
+2021-08-25 23:04:47,247: initial_forget_bias: 3
+2021-08-25 23:04:47,248: output_dropout: 0.4
+2021-08-25 23:04:47,248: output_activation: linear
+2021-08-25 23:04:47,248: optimizer: Adam
+2021-08-25 23:04:47,248: loss: NSE
+2021-08-25 23:04:47,248: learning_rate: {0: 0.001, 1: 0.0005}
+2021-08-25 23:04:47,248: batch_size: 256
+2021-08-25 23:04:47,248: epochs: 3
+2021-08-25 23:04:47,248: clip_gradient_norm: 1
+2021-08-25 23:04:47,249: predict_last_n: 1
+2021-08-25 23:04:47,249: seq_length: 365
+2021-08-25 23:04:47,249: num_workers: 8
+2021-08-25 23:04:47,249: log_interval: 5
+2021-08-25 23:04:47,249: log_tensorboard: True
+2021-08-25 23:04:47,249: save_weights_every: 1
+2021-08-25 23:04:47,249: save_validation_results: True
+2021-08-25 23:04:47,249: dataset: tnc_kenya
+2021-08-25 23:04:47,249: data_dir: /data_dir/basin_mean_forcing
+2021-08-25 23:04:47,249: forcings: ['kenya_forcings']
+2021-08-25 23:04:47,249: dynamic_inputs: ['prcp(mm/day)', 'srad(W/m2)', 'tmax(C)', 'tmin(C)', 'vp(Pa)']
+2021-08-25 23:04:47,249: target_variables: ['QObs(mm/d)']
+2021-08-25 23:04:47,249: static_attributes: None
+2021-08-25 23:04:47,249: number_of_basins: 16
+2021-08-25 23:04:47,250: train_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_230447/train_data
+2021-08-25 23:04:47,250: img_log_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_230447/img_log
+2021-08-25 23:04:47,268: ### Device cuda:0 will be used for training
+2021-08-25 23:04:47,302: Uncaught exception
+Traceback (most recent call last):
+  File "/Users/rolandoruche/opt/anaconda3/bin/nh-run", line 33, in <module>
+    sys.exit(load_entry_point('neuralhydrology', 'console_scripts', 'nh-run')())
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/nh_run.py", line 43, in _main
+    start_run(config_file=Path(args["config_file"]), gpu=args["gpu"])
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/nh_run.py", line 76, in start_run
+    start_training(config)
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/train.py", line 22, in start_training
+    trainer.initialize_training()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/basetrainer.py", line 136, in initialize_training
+    self.model = self._get_model().to(self.device)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 852, in to
+    return self._apply(convert)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 530, in _apply
+    module._apply(fn)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/torch/nn/modules/rnn.py", line 182, in _apply
+    ret = super(RNNBase, self)._apply(fn)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 552, in _apply
+    param_applied = fn(param)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 850, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/torch/cuda/__init__.py", line 166, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled

@@ -1,0 +1,92 @@
+2021-08-26 08:58:55,164: Logging to /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_085855/output.log initialized.
+2021-08-26 08:58:55,164: ### Folder structure created at /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_085855
+2021-08-26 08:58:55,164: ### Run configurations for cudalstm_camels_us_531_basins
+2021-08-26 08:58:55,164: experiment_name: cudalstm_camels_us_531_basins
+2021-08-26 08:58:55,164: run_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_085855
+2021-08-26 08:58:55,165: train_basin_file: examples/CAMELS-US/us_basin_list.txt
+2021-08-26 08:58:55,165: validation_basin_file: examples/CAMELS-US/us_basin_list.txt
+2021-08-26 08:58:55,165: test_basin_file: examples/CAMELS-US/us_basin_list.txt
+2021-08-26 08:58:55,165: train_start_date: 1999-10-01 00:00:00
+2021-08-26 08:58:55,166: train_end_date: 2008-09-30 00:00:00
+2021-08-26 08:58:55,166: validation_start_date: 1980-10-01 00:00:00
+2021-08-26 08:58:55,166: validation_end_date: 1989-09-30 00:00:00
+2021-08-26 08:58:55,166: test_start_date: 1989-10-01 00:00:00
+2021-08-26 08:58:55,166: test_end_date: 1999-09-30 00:00:00
+2021-08-26 08:58:55,166: seed: 123
+2021-08-26 08:58:55,166: device: None
+2021-08-26 08:58:55,166: validate_every: 1
+2021-08-26 08:58:55,166: validate_n_random_basins: 531
+2021-08-26 08:58:55,166: metrics: ['NSE']
+2021-08-26 08:58:55,166: model: cudalstm
+2021-08-26 08:58:55,166: head: regression
+2021-08-26 08:58:55,167: hidden_size: 128
+2021-08-26 08:58:55,167: initial_forget_bias: 3
+2021-08-26 08:58:55,167: output_dropout: 0.4
+2021-08-26 08:58:55,167: output_activation: linear
+2021-08-26 08:58:55,167: optimizer: Adam
+2021-08-26 08:58:55,167: loss: NSE
+2021-08-26 08:58:55,167: learning_rate: {0: 0.001, 1: 0.0005}
+2021-08-26 08:58:55,167: batch_size: 256
+2021-08-26 08:58:55,167: epochs: 3
+2021-08-26 08:58:55,167: clip_gradient_norm: 1
+2021-08-26 08:58:55,167: predict_last_n: 1
+2021-08-26 08:58:55,167: seq_length: 365
+2021-08-26 08:58:55,168: num_workers: 8
+2021-08-26 08:58:55,168: log_interval: 5
+2021-08-26 08:58:55,168: log_tensorboard: True
+2021-08-26 08:58:55,168: save_weights_every: 1
+2021-08-26 08:58:55,168: save_validation_results: True
+2021-08-26 08:58:55,168: dataset: camels_us
+2021-08-26 08:58:55,168: data_dir: data_dir
+2021-08-26 08:58:55,168: forcings: ['nldas_extended']
+2021-08-26 08:58:55,168: dynamic_inputs: ['PRCP(mm/day)', 'SRAD(W/m2)', 'Tmax(C)', 'Tmin(C)', 'Vp(Pa)']
+2021-08-26 08:58:55,168: target_variables: ['QObs(mm/d)']
+2021-08-26 08:58:55,169: static_attributes: None
+2021-08-26 08:58:55,169: number_of_basins: 531
+2021-08-26 08:58:55,169: train_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_085855/train_data
+2021-08-26 08:58:55,169: img_log_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_085855/img_log
+2021-08-26 08:58:55,178: ### Device cpu will be used for training
+2021-08-26 08:58:55,203: Loading basin data_dir into xarray data_dir set.
+2021-08-26 08:58:55,369: NumExpr defaulting to 4 threads.
+2021-08-26 08:59:52,264: Calculating target variable stds per basin
+2021-08-26 08:59:53,424: Create lookup table and convert to pytorch tensor
+2021-08-26 09:00:11,632: Setting learning rate to 0.0005
+2021-08-26 09:00:18,094: Uncaught exception
+Traceback (most recent call last):
+  File "/Users/rolandoruche/opt/anaconda3/bin/nh-run", line 33, in <module>
+    sys.exit(load_entry_point('neuralhydrology', 'console_scripts', 'nh-run')())
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/nh_run.py", line 43, in _main
+    start_run(config_file=Path(args["config_file"]), gpu=args["gpu"])
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/nh_run.py", line 76, in start_run
+    start_training(config)
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/train.py", line 23, in start_training
+    trainer.train_and_validate()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/basetrainer.py", line 206, in train_and_validate
+    self._train_epoch(epoch=epoch)
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/basetrainer.py", line 272, in _train_epoch
+    for data in pbar:
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/tqdm/std.py", line 1178, in __iter__
+    for obj in iterable:
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 359, in __iter__
+    return self._get_iterator()
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 305, in _get_iterator
+    return _MultiProcessingDataLoaderIter(self)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 918, in __init__
+    w.start()
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/context.py", line 224, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/context.py", line 284, in _Popen
+    return Popen(process_obj)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 32, in __init__
+    super().__init__(process_obj)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/popen_spawn_posix.py", line 47, in _launch
+    reduction.dump(process_obj, fp)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/reduction.py", line 60, in dump
+    ForkingPickler(file, protocol).dump(obj)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/multiprocessing/queues.py", line 57, in __getstate__
+    def __getstate__(self):
+KeyboardInterrupt

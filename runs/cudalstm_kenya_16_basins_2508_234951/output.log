@@ -1,0 +1,88 @@
+2021-08-25 23:49:51,681: Logging to /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_234951/output.log initialized.
+2021-08-25 23:49:51,681: ### Folder structure created at /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_234951
+2021-08-25 23:49:51,681: ### Run configurations for cudalstm_kenya_16_basins
+2021-08-25 23:49:51,682: experiment_name: cudalstm_kenya_16_basins
+2021-08-25 23:49:51,682: run_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_234951
+2021-08-25 23:49:51,682: train_basin_file: examples/TNC-Kenya/kenya_basin_list.txt
+2021-08-25 23:49:51,682: validation_basin_file: examples/TNC-Kenya/kenya_basin_list.txt
+2021-08-25 23:49:51,682: test_basin_file: examples/TNC-Kenya/kenya_basin_list.txt
+2021-08-25 23:49:51,683: train_start_date: 2015-11-20 00:00:00
+2021-08-25 23:49:51,683: train_end_date: 2019-01-03 00:00:00
+2021-08-25 23:49:51,683: validation_start_date: 2019-01-04 00:00:00
+2021-08-25 23:49:51,683: validation_end_date: 2019-05-26 00:00:00
+2021-08-25 23:49:51,683: test_start_date: 2019-05-27 00:00:00
+2021-08-25 23:49:51,683: test_end_date: 2019-10-16 00:00:00
+2021-08-25 23:49:51,683: seed: 123
+2021-08-25 23:49:51,683: device: cpu
+2021-08-25 23:49:51,683: validate_every: 1
+2021-08-25 23:49:51,684: validate_n_random_basins: 16
+2021-08-25 23:49:51,684: metrics: ['NSE']
+2021-08-25 23:49:51,684: model: cudalstm
+2021-08-25 23:49:51,684: head: regression
+2021-08-25 23:49:51,684: hidden_size: 128
+2021-08-25 23:49:51,684: initial_forget_bias: 3
+2021-08-25 23:49:51,684: output_dropout: 0.4
+2021-08-25 23:49:51,684: output_activation: linear
+2021-08-25 23:49:51,684: optimizer: Adam
+2021-08-25 23:49:51,684: loss: NSE
+2021-08-25 23:49:51,685: learning_rate: {0: 0.001, 1: 0.0005}
+2021-08-25 23:49:51,685: batch_size: 256
+2021-08-25 23:49:51,685: epochs: 3
+2021-08-25 23:49:51,685: clip_gradient_norm: 1
+2021-08-25 23:49:51,685: predict_last_n: 1
+2021-08-25 23:49:51,685: seq_length: 365
+2021-08-25 23:49:51,685: num_workers: 8
+2021-08-25 23:49:51,686: log_interval: 5
+2021-08-25 23:49:51,686: log_tensorboard: True
+2021-08-25 23:49:51,687: save_weights_every: 1
+2021-08-25 23:49:51,687: save_validation_results: True
+2021-08-25 23:49:51,688: dataset: tnc_kenya
+2021-08-25 23:49:51,688: data_dir: data_dir
+2021-08-25 23:49:51,689: forcings: ['kenya_forcings']
+2021-08-25 23:49:51,691: dynamic_inputs: ['prcp(mm/day)', 'srad(W/m2)', 'tmax(C)', 'tmin(C)', 'vp(Pa)']
+2021-08-25 23:49:51,691: target_variables: ['QObs(mm/d)']
+2021-08-25 23:49:51,692: static_attributes: None
+2021-08-25 23:49:51,693: number_of_basins: 16
+2021-08-25 23:49:51,693: train_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_234951/train_data
+2021-08-25 23:49:51,693: img_log_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_kenya_16_basins_2508_234951/img_log
+2021-08-25 23:49:51,703: ### Device cpu will be used for training
+2021-08-25 23:49:51,727: Loading basin data_dir into xarray data_dir set.
+2021-08-25 23:49:51,901: NumExpr defaulting to 4 threads.
+2021-08-25 23:49:52,027: Uncaught exception
+Traceback (most recent call last):
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/basedataset.py", line 278, in _load_or_create_xarray_dataset
+    df = df[keep_cols]
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py", line 3030, in __getitem__
+    indexer = self.loc._get_listlike_indexer(key, axis=1, raise_missing=True)[1]
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/pandas/core/indexing.py", line 1266, in _get_listlike_indexer
+    self._validate_read_indexer(keyarr, indexer, axis, raise_missing=raise_missing)
+  File "/Users/rolandoruche/opt/anaconda3/lib/python3.8/site-packages/pandas/core/indexing.py", line 1316, in _validate_read_indexer
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['vp(Pa)', 'tmax(C)', 'prcp(mm/day)', 'srad(W/m2)', 'tmin(C)'] not in index"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rolandoruche/opt/anaconda3/bin/nh-run", line 33, in <module>
+    sys.exit(load_entry_point('neuralhydrology', 'console_scripts', 'nh-run')())
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/nh_run.py", line 43, in _main
+    start_run(config_file=Path(args["config_file"]), gpu=args["gpu"])
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/nh_run.py", line 76, in start_run
+    start_training(config)
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/train.py", line 22, in start_training
+    trainer.initialize_training()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/basetrainer.py", line 163, in initialize_training
+    ds = self._get_dataset()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/training/basetrainer.py", line 78, in _get_dataset
+    return get_dataset(cfg=self.cfg, period="train", is_train=True, scaler=self._scaler)
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/__init__.py", line 72, in get_dataset
+    ds = Dataset(cfg=cfg,
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/tnc_kenya.py", line 25, in __init__
+    super(TNCKenya, self).__init__(cfg=cfg,
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/basedataset.py", line 129, in __init__
+    self._load_data()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/basedataset.py", line 542, in _load_data
+    xr = self._load_or_create_xarray_dataset()
+  File "/Users/rolandoruche/PycharmProjects/neuralhydrology/neuralhydrology/datasetzoo/basedataset.py", line 285, in _load_or_create_xarray_dataset
+    raise KeyError("".join(msg))
+KeyError: "The following features are not available in the data_dir: ['prcp(mm/day)', 'srad(W/m2)', 'tmax(C)', 'tmin(C)', 'vp(Pa)']. These are the available features: ['Year', 'Mnth', 'Day', 'Hr', 'Dayl(s)', 'PRCP(mm/day)', 'SRAD(W/m2)', 'SWE(mm)', 'Tmax(C)', 'Tmin(C)', 'Vp(Pa)', 'QObs(mm/d)']"

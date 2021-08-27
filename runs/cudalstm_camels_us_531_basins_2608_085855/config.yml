@@ -1,0 +1,56 @@
+batch_size: 256
+clip_gradient_norm: 1
+commit_hash: cd73563
+data_dir: data_dir
+dataset: camels_us
+device: None
+dynamic_inputs:
+- PRCP(mm/day)
+- SRAD(W/m2)
+- Tmax(C)
+- Tmin(C)
+- Vp(Pa)
+epochs: 3
+experiment_name: cudalstm_camels_us_531_basins
+forcings:
+- nldas_extended
+head: regression
+hidden_size: 128
+img_log_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_085855/img_log
+initial_forget_bias: 3
+learning_rate:
+  0: 0.001
+  1: 0.0005
+log_interval: 5
+log_tensorboard: true
+loss: NSE
+metrics:
+- NSE
+model: cudalstm
+num_workers: 8
+number_of_basins: 531
+optimizer: Adam
+output_activation: linear
+output_dropout: 0.4
+package_version: 1.0.0-beta4
+predict_last_n: 1
+run_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_085855
+save_validation_results: true
+save_weights_every: 1
+seed: 123
+seq_length: 365
+static_attributes:
+target_variables:
+- QObs(mm/d)
+test_basin_file: examples/CAMELS-US/us_basin_list.txt
+test_end_date: 30/09/1999
+test_start_date: 01/10/1989
+train_basin_file: examples/CAMELS-US/us_basin_list.txt
+train_dir: /Users/rolandoruche/PycharmProjects/neuralhydrology/runs/cudalstm_camels_us_531_basins_2608_085855/train_data
+train_end_date: 30/09/2008
+train_start_date: 01/10/1999
+validate_every: 1
+validate_n_random_basins: 531
+validation_basin_file: examples/CAMELS-US/us_basin_list.txt
+validation_end_date: 30/09/1989
+validation_start_date: 01/10/1980

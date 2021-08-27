@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: neuralhydrology
+Version: 1.0.0b4
+Summary: Library for training deep learning models with environmental focus
+Home-page: https://neuralhydrology.readthedocs.io
+Author: Frederik Kratzert <f.kratzert@gmail.com>, Daniel Klotz, Martin Gauch
+License: UNKNOWN
+Project-URL: Documentation, https://neuralhydrology.readthedocs.io
+Project-URL: Source, https://github.com/neuralhydrology/neuralhydrology
+Project-URL: Research Blog, https://neuralhydrology.github.io/
+Description: ![#](docs/source/_static/img/neural-hyd-logo-black.png)
+        
+        Python library to train neural networks with a strong focus on hydrological applications.
+        
+        This package has been used extensively in research over the last year and was used in various academic publications. 
+        The core idea of this package is modularity in all places to allow easy integration of new datasets, new model 
+        architectures or any training related aspects (e.g. loss functions, optimizer, regularization). 
+        One of the core concepts of this code base are configuration files, which lets anyone train neural networks without
+        touching the code itself. The `NeuralHydrology` package is build on top of the deep learning framework 
+        [Pytorch](https://pytorch.org/), since it has proven to be the most flexible and useful for research purposes.
+        
+        We (AI for Earth Science group at Institute for Machine Learning, Johannes Kepler University, Linz, Austria) are using
+        this code in our day-to-day research and will continue to integrate our new research findings into this public repository.
+        
+        **Note:** We will gradually add more examples/documentation over the next couple of days/weeks.
+        
+        - Documentation: [neuralhydrology.readthedocs.io](https://neuralhydrology.readthedocs.io)
+        - Research Blog: [neuralhydrology.github.io](https://neuralhydrology.github.io)
+        - Bug reports/Feature requests [https://github.com/neuralhydrology/neuralhydrology/issues](https://github.com/neuralhydrology/neuralhydrology/issues)
+        
+        
+        # Contact
+        
+        If you have any questions regarding the usage of this repository, feature requests or comments, please open an issue.
+        You can also reach out to Frederik Kratzert (kratzert(at)ml.jku.at) by email.
+        
+Keywords: deep learning hydrology lstm neural network streamflow discharge rainfall-runoff
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Hydrology
+Classifier: License :: OSI Approved :: BSD License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
