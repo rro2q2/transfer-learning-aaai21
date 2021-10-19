@@ -1,16 +1,5 @@
-![#](docs/source/_static/img/neural-hyd-logo-black.png)
-
-Python library to train neural networks with a strong focus on hydrological applications.
-
-This package has been used extensively in research over the last year and was used in various academic publications. 
-The core idea of this package is modularity in all places to allow easy integration of new datasets, new model 
-architectures or any training related aspects (e.g. loss functions, optimizer, regularization). 
-One of the core concepts of this code base are configuration files, which lets anyone train neural networks without
-touching the code itself. The `NeuralHydrology` package is build on top of the deep learning framework 
-[Pytorch](https://pytorch.org/), since it has proven to be the most flexible and useful for research purposes.
-
-We (AI for Earth Science group at Institute for Machine Learning, Johannes Kepler University, Linz, Austria) are using
-this code in our day-to-day research and will continue to integrate our new research findings into this public repository.
+Python Library to that uses transfer learning for hydrological time series modeling for streamflow basins. The basis of our work is an add on to the Neuralhydrology project.
+Neuralhydrology Repo: [neuralhydrology/neuralhydrology](https://github.com/neuralhydrology/neuralhydrology) 
 
 **Note:** We will gradually add more examples/documentation over the next couple of days/weeks.
 
