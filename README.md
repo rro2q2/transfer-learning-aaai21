@@ -1,4 +1,4 @@
-Python Library to that uses transfer learning for hydrological time series modeling for streamflow basins. The basis of our work is an add on to the Neuralhydrology project.
+Python Library to that uses transfer learning for hydrological time series modeling for streamflow basins. The basis of our work is an add on to the Neuralhydrology project. In order to run the experiments, you will need to first download the Neuralhydrology GitHub repository shown below.
 
 Neuralhydrology Repo: [neuralhydrology/neuralhydrology](https://github.com/neuralhydrology/neuralhydrology) 
 - Neuralhydrology Documentation: [neuralhydrology.readthedocs.io](https://neuralhydrology.readthedocs.io)
@@ -8,25 +8,24 @@ Neuralhydrology Repo: [neuralhydrology/neuralhydrology](https://github.com/neura
 
 
 # Project Contents
-transfer-learning-aaai21
-----> data_dir/
-----> docs/
-----> environments/
-----> examples/
-----> expir_runs/
---------> tl.json
-----> neuralhydrology
-----> output
-----> pretrained_models
-----> runs
-----> test
-----> contsants.py
-----> main.py
-----> readthedocs.yml
-----> setup.py
-----> train.py
-----> transferlearning.py
-----> utils.py
+transfer-learning-aaai21\
+----> data_dir/\
+----> docs/\
+----> environments/\
+----> examples/\
+----> expir_runs/\
+----> neuralhydrology\
+----> output\
+----> pretrained_models\
+----> runs\
+----> test\
+----> contsants.py\
+----> main.py\
+----> readthedocs.yml\
+----> setup.py\
+----> train.py\
+----> transferlearning.py\
+----> utils.py\
 ----> visualizations.py
 
 # Contact
